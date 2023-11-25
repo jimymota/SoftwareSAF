@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteClientes" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5b40a892-a0ee-48b5-ac85-a50454336b2b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from cliente]]>
+	</queryString>
+	<field name="IdCliente" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Ruc" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="RazonSocial" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Estado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="129" y="19" width="289" height="34" uuid="36a01c6e-2641-40b7-86d9-48f2b3f50a82"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE CLIENTES]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="440" y="59" width="59" height="20" uuid="7a31368e-8219-4f4f-81a2-fdbfbfc8ff20"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="h.mm a">
+				<reportElement x="499" y="59" width="52" height="20" uuid="0e0f0eca-9c90-4811-8e50-6eb70f3893da"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="19" splitType="Stretch">
+			<staticText>
+				<reportElement x="28" y="2" width="41" height="16" uuid="50f74eda-75a4-4df6-b8cf-f6e15a0f0d40"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="77" y="2" width="100" height="16" uuid="642b5349-2ee3-4392-901d-5dbd5d78e71e"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[RUC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="188" y="2" width="230" height="16" uuid="ce89d0dd-64e0-4478-a54b-9e0b5e34b60b"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[RAZÓN SOCIAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="2" width="100" height="16" uuid="5fb19de2-b16d-4e80-837e-80b30ac7650a"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ESTADO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="28" y="17" width="502" height="1" uuid="9f975dfe-c8a2-43f0-8358-a50f7a80edb0"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="14" splitType="Stretch">
+			<textField>
+				<reportElement x="28" y="0" width="41" height="14" uuid="e7be30d1-8ca9-4b25-8b73-6d35549145ec"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{IdCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="77" y="0" width="100" height="14" uuid="14024969-1b50-4bfd-946b-f7880d55c79f"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Ruc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="188" y="0" width="230" height="14" uuid="b4e14cb8-100b-43e1-932e-ae318c3caa3a"/>
+				<textFieldExpression><![CDATA[$F{RazonSocial}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="0" width="100" height="14" uuid="db6108d3-d0bb-4772-ae30-9863e8cef007"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Estado}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="15" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement x="451" y="11" width="63" height="16" uuid="a27a77c9-8eb0-40bf-b738-abf95fb3b9a6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="11" width="40" height="16" uuid="e3c4b91d-2924-47e8-a54b-4258b773a1d5"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="11" width="277" height="16" uuid="1befb270-fc83-4f6b-88d0-9f13b017c4cf"/>
+				<text><![CDATA[Sistema de Alertas para la Facturación y Cobranza - SAF]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="21" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteContrato" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9a6c65d4-fe9b-412a-b166-79d8eca5ee30">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select tr.IdTransaccion, co.IdContrato, tr.FechaVencimiento, cl.RazonSocial, tr.NumeFactura, co.TipoFacturacion, co.Tarifa, tr.Estado from cliente cl inner join contrato co on cl.IdCliente=co.IdCliente inner join transaccion tr on co.IdContrato=tr.IdContrato where cl.Estado='Activo']]>
+	</queryString>
+	<field name="IdTransaccion" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="IdContrato" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FechaVencimiento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="RazonSocial" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="NumeFactura" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="TipoFacturacion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Tarifa" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Estado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField pattern="h.mm a">
+				<reportElement x="750" y="59" width="52" height="20" uuid="24756026-3583-4bd7-a88f-1b6716acd20e"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="210" y="19" width="378" height="34" uuid="4a02af2b-ee6a-4187-b37e-202ba427d0cd"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE TRANSACCIONES]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="691" y="59" width="59" height="20" uuid="77ba61fa-9376-4969-85f8-2a9a74205af7"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="19" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="45" height="16" uuid="b2a98a81-aa2e-4364-94f9-5f5c1bde21de"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="2" width="65" height="16" uuid="dabcc71f-eedd-4e3d-8184-92e24ae94e35"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONTRATO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="2" width="85" height="16" uuid="60632a20-d9d4-4d89-88cd-ea338ff0a8bb"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[VENCIMIENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="210" y="2" width="255" height="16" uuid="fdc2eea6-fd12-42cf-971b-752a97a9fff8"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[CLIENTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="470" y="2" width="87" height="16" uuid="56e02b49-2606-4359-9ba4-c7abbaf96eea"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FACTURA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="650" y="2" width="87" height="16" uuid="8380dc46-c65d-45db-88ab-7d8290ad470f"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TARIFA]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="18" width="802" height="1" uuid="187552d2-e2b8-43ea-9e61-878aeee054e0"/>
+			</line>
+			<staticText>
+				<reportElement x="562" y="2" width="83" height="16" uuid="6d50ab92-6a80-4919-ab41-f10410560356"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TIPO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="741" y="3" width="61" height="16" uuid="063af1ed-1d02-4351-bf54-d7c33ded5b40"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ESTADO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="17" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="45" height="17" uuid="29145333-e8ac-4b64-86ab-e488c883147a"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{IdTransaccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="0" width="65" height="17" uuid="0df587ff-54be-45cc-9e9d-1682a3804aec"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{IdContrato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="0" width="85" height="17" uuid="3d8755fe-b8eb-4d2f-9398-a27b13f59cc8"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{FechaVencimiento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="210" y="0" width="255" height="17" uuid="54997518-694a-4816-b730-0d51e40c8646"/>
+				<textFieldExpression><![CDATA[$F{RazonSocial}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="562" y="0" width="83" height="17" uuid="d162de8a-e649-45a7-9ceb-7d111108edff"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{TipoFacturacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="470" y="0" width="87" height="17" uuid="ca5b599b-563f-426a-a45c-847754c6efe1"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{NumeFactura}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="650" y="0" width="87" height="17" uuid="8804f80f-98eb-447e-8763-de2ee4ec5b07"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Tarifa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="741" y="0" width="61" height="17" uuid="1c779296-2b42-49fb-8c89-72baf1dc1c0e"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Estado}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="13" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="29" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="12" width="277" height="16" uuid="cba3db4e-fbce-46ac-a743-7dff43fe7b5b"/>
+				<text><![CDATA[Sistema de Alertas para la Facturación y Cobranza - SAF]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="699" y="12" width="63" height="16" uuid="2fb8eba1-2858-485c-a089-3c32d1987d50"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="762" y="12" width="40" height="16" uuid="d3597e3d-25f1-43c5-9851-ee6d964860fd"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="16" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteUsuarios" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8a65690a-69fe-45fd-99bc-b2190dfab6f6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select IdUsuario, Dni, Nombre, Password, Telefono, Estado, IdRol from usuario]]>
+	</queryString>
+	<field name="IdUsuario" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Dni" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Password" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Telefono" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Estado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="IdRol" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="139" y="19" width="311" height="34" uuid="cbc5bfa5-2bad-4d9e-8887-6261e29c2a70"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE USUARIOS]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="450" y="59" width="59" height="20" uuid="f6e5db89-c44e-4333-bf33-9b55124358d7"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="h.mm a">
+				<reportElement x="509" y="59" width="52" height="20" uuid="a3eb26ce-7e1f-4310-9335-754a16d8cb55"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="19" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="48" height="16" uuid="2fe76316-0305-42dc-b760-bfc1abb3fcc1"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="52" y="2" width="64" height="16" uuid="babe1ecb-96cd-45c3-902f-9859952bc516"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DNI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="121" y="2" width="142" height="16" uuid="87c757fe-7894-48e9-9a00-7eb617bcc5ae"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="267" y="2" width="83" height="16" uuid="e6e2dca0-370a-46b1-a1fe-4f6d6ba4f5ba"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PASSWORD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="355" y="2" width="68" height="16" uuid="34b0dd15-a7cb-410c-84c0-d9b70f6a7116"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TELEFONO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="429" y="2" width="54" height="16" uuid="4e271974-e21e-4ec8-881e-38607a97b5b2"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ESTADO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="488" y="2" width="66" height="16" uuid="f6263bf3-a2fc-440c-8f19-28f1c7158134"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ROL]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="18" width="554" height="1" uuid="ceb611fe-2ea0-44bb-b6b5-5fd90307f830"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="1" width="48" height="16" uuid="70e8a444-0594-4651-819e-fa297b0e46e7"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{IdUsuario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="52" y="1" width="64" height="16" uuid="954a1fbf-654c-45e3-a25a-b4b6e7d5cea2"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Dni}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="121" y="1" width="142" height="16" uuid="5585521e-1921-453e-89ba-48f85cca0e16"/>
+				<textFieldExpression><![CDATA[$F{Nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="267" y="1" width="83" height="16" uuid="b9e61bed-ecc3-4e46-bc30-f3459dd979e2"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Password}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="1" width="68" height="16" uuid="6448028c-e3fa-41df-86c0-8d7c4fbe2a26"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="429" y="1" width="54" height="16" uuid="42cd4ab0-ead2-4ee0-b798-b9385cb92015"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{Estado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="488" y="1" width="66" height="16" uuid="cfe53f4b-c45f-44e0-a167-e6476c87e633"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{IdRol}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="9" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="277" height="16" uuid="62a668e2-9c3e-45fe-a5c2-d11e8ceecf5d"/>
+				<text><![CDATA[Sistema de Alertas para la Facturación y Cobranza - SAF]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement x="514" y="10" width="40" height="16" uuid="ed1a89ce-2016-4135-b1e0-37fe7e576540"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="451" y="10" width="63" height="16" uuid="228e9a6e-f16f-438f-b260-8cb4c58dca49"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="23" splitType="Stretch"/>
+	</summary>
+</jasperReport>
