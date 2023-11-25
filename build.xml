@@ -10,6 +10,9 @@
 <project name="SoftwareSAF" default="default" basedir=".">
     <description>Builds, tests, and runs the project SoftwareSAF.</description>
     <import file="nbproject/build-impl.xml"/>
+    <properties>
+        <java.version>8</java.version>
+    </properties>
     <!--
 
     There exist several targets which are by default empty and which can be 
